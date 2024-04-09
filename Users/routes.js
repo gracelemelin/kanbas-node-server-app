@@ -5,27 +5,38 @@ export default function UserRoutes(app) {
 
   const deleteUser = async (req, res) => { };
 
-  const findAllUsers = async (req, res) => { 
-    const {role} = req.query;
-    if (role) {
-      const users = await dao.findUsersByRole(role);
-      res.json(users);
-      return;
-    }
+  // const findAllUsers = async (req, res) => { 
+  //   const {role} = req.query;
+  //   if (role) {
+  //     const users = await dao.findUsersByRole(role);
+  //     res.json(users);
+  //     return;
+  //   }
+  //   const users = await dao.findAllUsers();
+  //   res.json(users);
+  //   return;
+    
+  //  };
+
+  const findAllUsers = async (req, res) => {
     const users = await dao.findAllUsers();
     res.json(users);
-    return;
-    
-   };
-
-   const profile = async (req, res) => {
-    const currentUser = req.session["currentUser"];
-    if (currentUser) {
-      res.json(req.session["currentUser"]);
-    } else {
-      res.sendStatus(401);
-    }
   };
+
+
+  //  const profile = async (req, res) => {
+  //   const currentUser = req.session["currentUser"];
+  //   if (currentUser) {
+  //     res.json(req.session["currentUser"]);
+  //   } else {
+  //     res.sendStatus(401);
+  //   }
+  // };
+
+  const profile = async (req, res) => {
+    res.json(currentUser);
+  };
+
 
   const findUserById = async (req, res) => { };
 
