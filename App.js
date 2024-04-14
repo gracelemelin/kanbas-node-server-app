@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 import UserRoutes from './Users/routes.js';
 import QuizzesRoutes from './Quizzes/routes.js';
 import cors from "cors";
-mongoose.connect("mongodb://localhost:27017");
+mongoose.connect("mongodb://localhost:27017/kanbas");
 const app = express()
 app.use(cors());
 app.use(express.json());
