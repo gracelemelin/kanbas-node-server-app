@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 const schema = new mongoose.Schema({
-    _id: { type: String, required: true, unique: true },
-    name: { type: String, required: true, unique: true },
-    number: { type: String, required: true, unique: true },
+    _id: String,
+    name: String,
+    number: String,
     startDate: Date,
     endDate: Date,
     image: String,
