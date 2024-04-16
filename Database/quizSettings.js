@@ -1,6 +1,6 @@
 export default [
     {
-        "_id": "Q101",
+        "id": "Q101",
         "quizType": "Graded Quiz",
         "points": 100,
         "assignmentGroup": "Quizzes",
@@ -17,7 +17,7 @@ export default [
         "untilDate": "2024-05-31"
     },
     {
-        "_id": "Q102",
+        "id": "Q102",
         "quizType": "Practice Quiz",
         "points": 50,
         "assignmentGroup": "Exams",

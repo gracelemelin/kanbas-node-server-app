@@ -6,6 +6,7 @@ import ModuleRoutes from "./Modules/routes.js";
 import mongoose from 'mongoose';
 import UserRoutes from './Users/routes.js';
 import QuizzesRoutes from './Quizzes/routes.js';
+import QuizQuestions from './QuizQuestions/routes.js';
 import cors from "cors";
 mongoose.connect("mongodb://localhost:27017/kanbas");
 const app = express()
@@ -15,6 +16,7 @@ UserRoutes(app);
 ModuleRoutes(app);
 CourseRoutes(app);
 QuizzesRoutes(app);
+QuizQuestions(app);
 Lab5(app)
 Hello(app)
 app.listen(process.env.PORT || 4000)

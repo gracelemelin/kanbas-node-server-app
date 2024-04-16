@@ -1,6 +1,6 @@
 export default [
     {
-      "_id": 1,
+      "id": "1",
       "qzid": "Q101",
       "type": "multipleChoice",
       "question": "What is React?",
@@ -12,21 +12,21 @@ export default [
       ]
     },
     {
-      "_id": 2,
+      "id": "2",
       "qzid": "Q101",
       "type": "trueFalse",
       "question": "JSX is a syntax extension for JavaScript used with React.",
       "answer": true
     },
     {
-      "_id": 3,
+      "id": "3",
       "qzid": "Q101",
       "type": "fillInBlank",
       "question": "React is a _____ library for building user interfaces, developed by Facebook.",
       "answers": ["JavaScript"]
     },
     {
-      "_id": 4,
+      "id": "4",
       "qzid": "Q101",
       "type": "multipleChoice",
       "question": "What are the key features of React?",
@@ -38,21 +38,21 @@ export default [
       ]
     },
     {
-      "_id": 5,
+      "id": "5",
       "qzid": "Q102",
       "type": "trueFalse",
       "question": "Components in React are reusable pieces of code that describe how a part of the user interface should look.",
       "answer": true
     },
     {
-      "_id": 6,
+      "id": "6",
       "qzid": "Q102",
       "type": "fillInBlank",
       "question": "_____ is a built-in object used to store data that affects a component's behavior and appearance in React.",
       "answers": ["State"]
     },
     {
-      "_id": 7,
+      "id": "7",
       "qzid": "Q102",
       "type": "trueFalse",
       "question": "Props in React are read-only and passed from child to parent components.",
