@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const schema = new mongoose.Schema({
-    _id: String,
+    id: String,
     name: String,
     number: String,
     startDate: Date,

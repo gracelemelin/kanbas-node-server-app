@@ -7,14 +7,14 @@ function ModuleRoutes(app) {
     const newModule = {
       ...req.body,
       course: cid,
-      _id: new Date().getTime().toString(),
+      id: new Date().getTime().toString(),
     }
     const module = await dao.createModule(newModule);
     res.json(module);
   };
   
   const deleteModule = async (req, res) => {
-    const status = await dao.deleteModule(req.params.id.mid);
+    const status = await dao.deleteModule(req.params.mid);
     res.json(status);
   };
 
