@@ -12,7 +12,7 @@ import "dotenv/config";
 const CONNECTIONSTRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/kanbas'
 
 mongoose.connect(CONNECTIONSTRING, {dbName: 'kanbas'});
-// mongoose.connect("mongodb://localhost:27017/kanbas");
+
 const app = express()
 app.use(cors({
   credentials: true,
