@@ -9,9 +9,10 @@ import cors from "cors";
 import session from "express-session";
 import "dotenv/config";
 
-const CONNECTIONSTRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:28017/kanbas'
+const CONNECTIONSTRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/kanbas'
 
 mongoose.connect(CONNECTIONSTRING, {dbName: 'kanbas'});
+// mongoose.connect("mongodb://localhost:27017/kanbas");
 const app = express()
 app.use(cors({
   credentials: true,
