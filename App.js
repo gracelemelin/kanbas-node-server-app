@@ -17,6 +17,9 @@ const app = express()
 app.use(cors({
   credentials: true,
   origin: process.env.FRONTEND_URL,
+  headers: {
+    'Access-Control-Allow-Origin': "*",
+  }
 }));
 const sessionOptions = {
   secret: process.env.SESSION_SECRET,
