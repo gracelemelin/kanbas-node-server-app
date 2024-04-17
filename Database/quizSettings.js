@@ -5,7 +5,7 @@ export default [
         "points": 100,
         "assignmentGroup": "Quizzes",
         "shuffleAnswers": true,
-        "timeLimit": 30,
+        "timeLimit": 20,
         "multipleAttempts": false,
         "showCorrectAnswers": true,
         "accessCode": "1234",
