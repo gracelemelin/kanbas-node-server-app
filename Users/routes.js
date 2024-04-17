@@ -62,6 +62,7 @@ export default function UserRoutes(app) {
     if (currentUser) {
       req.session["currentUser"] = currentUser;
       globalCurrentUser = currentUser;
+      res.setHeader("Access-Control-Allow-Origin", "https://a6--lustrous-platypus-b74747.netlify.app")
       res.json(currentUser);
     } else {
       res.sendStatus(401);
