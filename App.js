@@ -9,29 +9,30 @@ import cors from "cors";
 import session from "express-session";
 import "dotenv/config";
 
-const CONNECTIONSTRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/kanbas'
+// const CONNECTIONSTRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/kanbas'
 
-mongoose.connect(CONNECTIONSTRING, {dbName: 'kanbas'});
+// mongoose.connect(CONNECTIONSTRING, {dbName: 'kanbas'});
+mongoose.connect("mongodb://localhost:27017/kanbas");
 
-const app = express()
+const app = express();
 app.use(cors({
   credentials: true,
   origin: process.env.FRONTEND_URL,
 }));
-const sessionOptions = {
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-};
-if (process.env.NODE_ENV !== "development") {
-  sessionOptions.proxy = true;
-  sessionOptions.cookie = {
-    sameSite: "none",
-    secure: true,
-    domain: process.env.HTTP_SERVER_DOMAIN,
-  };
-}
-app.use(session(sessionOptions));
+// const sessionOptions = {
+//   secret: process.env.SESSION_SECRET,
+//   resave: false,
+//   saveUninitialized: false,
+// };
+// if (process.env.NODE_ENV !== "development") {
+//   sessionOptions.proxy = true;
+//   sessionOptions.cookie = {
+//     sameSite: "none",
+//     secure: true,
+//     domain: process.env.HTTP_SERVER_DOMAIN,
+//   };
+// }
+// app.use(session(sessionOptions));
 app.use(express.json());
 UserRoutes(app);
 ModuleRoutes(app);
