@@ -4,6 +4,7 @@ const quizQuestionSchema = new mongoose.Schema({
     qzid: String,
     type: String,
     question: String,
+    points: Number,
   },
   { collection: "quizQuestions" , strict: false});
 export default quizQuestionSchema;

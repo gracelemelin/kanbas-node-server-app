@@ -16,13 +16,18 @@ function QuizzesRoutes(app) {
     res.json(status);
   });
 
-  //Getting quiz settings
+  //Getting quiz settings of one quiz
   app.get("/api/courses/:cid/quizzes/:qid/settings", async (req, res) => {
     const { qid } = req.params;
     const quiz = await dao.getQuizSettings(qid);
     res.send(quiz);
   });
 
+  //Getting all quiz settings
+  app.get("/api/courses/:cid/settings", async (req, res) => {
+    const settings = await dao.findAllQuizSettings();
+  res.send(settings);
+  });
 
   //Getting a particular quiz
   app.get("/api/courses/:cid/quizzes/:qid", async (req, res) => {
