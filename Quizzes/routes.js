@@ -94,7 +94,7 @@ const test = async (quizzes) => {
   
   for (const q of quizzes) {
     const quizs = await dao.getQuizSettings(q.id); 
-    console.log(quizs)
+    // console.log(quizs)
     settings.push(quizs)
   }
 
