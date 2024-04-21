@@ -13,7 +13,8 @@ import QuizzesRoutes from './Quizzes/routes.js';
 
 const CONNECTIONSTRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/kanbas'
 
-mongoose.connect(CONNECTIONSTRING, {dbName: 'kanbas'});
+mongoose.connect("mongodb+srv://gracelemelin:HTF38jAPhvsLJ71M@cluster0.shglx3k.mongodb.net/kanbas?retryWrites=true&w=majority&appName=Cluster0", 
+{dbName: 'kanbas'});
 
 const app = express()
 app.use(cors({
