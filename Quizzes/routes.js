@@ -26,7 +26,7 @@ function QuizzesRoutes(app) {
   //Getting all quiz settings
   app.get("/api/courses/:cid/settings", async (req, res) => {
     const settings = await dao.findAllQuizSettings();
-  res.send(settings);
+    res.send(settings);
   });
 
   //Getting a particular quiz
@@ -81,6 +81,38 @@ app.get("/api/courses/:cid/quizzes", async (req, res) => {
   const quizzes = await dao.findQuizzesOfCourse(cid)
   res.send(quizzes);
 });
+
+
+const zip = async (a1, a2) => {
+  const res = a1.map((x, i) => [x, a2[i]]); 
+  return res
+}
+
+const test = async (quizzes) => {
+  const settings = []
+
+  
+  for (const q of quizzes) {
+    const quizs = await dao.getQuizSettings(q.id); 
+    console.log(quizs)
+    settings.push(quizs)
+  }
+
+  return settings
+}
+
+//Getting all quizzes of a particular course with their settings
+app.get("/api/courses/:cid/quizzesAndSettings", async (req, res) => {
+  const { cid } = req.params;
+  const quizzes = await dao.findQuizzesOfCourse(cid)
+
+  const settings = await test(quizzes)
+
+  const qas = await zip(quizzes, settings)
+
+  res.send(qas);
+});
+
 
 //Getting all quizzes
 app.get("/api/quizzes", async (req, res) => {
