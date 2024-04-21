@@ -40,6 +40,7 @@ function QuizzesRoutes(app) {
   app.delete("/api/courses/:cid/quizzes/:qid", async (req, res) => {
     const { qid } = req.params;
     const status = await dao.deleteQuiz(qid);
+    const status2 = await dao.deleteQuizSettings(qid);
     res.json(status);
   });
 
@@ -52,8 +53,9 @@ function QuizzesRoutes(app) {
 
     const ns = {
       id: id,
+      description: "New Quiz",
       quizType: "Graded Quiz",
-      points: 100,
+      points: 0,
       assignmentGroup: "Quizzes",
       shuffleAnswers: true,
       timeLimit: 20,
@@ -65,7 +67,7 @@ function QuizzesRoutes(app) {
       lockQuestionsAfterAnswering: false,
       dueDate: new Date(2024, 5, 15),
       availableDate: new Date(2024, 6, 10),
-      untilDate: new Date( 2025, 6, 31),
+      untilDate: new Date( 2025, 6, 31)
     }
   
 

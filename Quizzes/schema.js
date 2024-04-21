@@ -4,6 +4,7 @@ const quizSchema = new mongoose.Schema({
     title: String,
     course: String,
     published: Boolean,
+    numQuestions: Number,
   },
   { collection: "quizzes" });
 export default quizSchema;

@@ -1,8 +1,9 @@
 export default [
     {
         "id": "Q101",
+        "description": "New Quiz",
         "quizType": "Graded Quiz",
-        "points": 100,
+        "points": 12,
         "assignmentGroup": "Quizzes",
         "shuffleAnswers": true,
         "timeLimit": 20,
@@ -18,6 +19,7 @@ export default [
     },
     {
         "id": "Q102",
+        "description": "New Quiz",
         "quizType": "Practice Quiz",
         "points": 50,
         "assignmentGroup": "Exams",

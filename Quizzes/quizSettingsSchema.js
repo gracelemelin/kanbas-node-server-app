@@ -2,11 +2,12 @@ import mongoose from "mongoose";
 const quizSettingsSchema = new mongoose.Schema(
   {
     id: String,
+    description: String,
     quizType: {
         type: String,
         enum: ["Graded Quiz", "Practice Quiz", "Graded Survey", "Ungraded Survey"],
         default: "Graded Quiz",},
-    points: Number,
+    points: {type: Number, default: 0},
     assignmentGroup: {
       type: String,
       enum: ["Quizzes", "Exams", "Assignments", "Projects"],

@@ -10,4 +10,5 @@ export const findQuizById = (quizId) => model.findOne({ id: quizId });
 export const getQuizSettings = (quizId) => quizSettingsModel.findOne({id: quizId});
 export const findAllQuizSettings = () => quizSettingsModel.find();
 export const updateQuizSettings = (quizId, settings) => quizSettingsModel.updateOne({id: quizId}, {$set: settings})
-export const deleteQuiz = (quizId) => model.deleteOne({ _id: quizId });
+export const deleteQuizSettings = (quizId) => quizSettingsModel.deleteOne({id: quizId})
+export const deleteQuiz = (quizId) => model.deleteOne({ id: quizId });

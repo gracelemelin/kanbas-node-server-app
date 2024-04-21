@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
       type: String,
       enum: ["STUDENT", "FACULTY", "ADMIN", "USER"],
       default: "USER",},
+    courses: [String],
   },
   { collection: "users" });
 export default userSchema;
