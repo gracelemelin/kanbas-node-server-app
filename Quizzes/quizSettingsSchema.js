@@ -13,7 +13,10 @@ const quizSettingsSchema = new mongoose.Schema(
       enum: ["Quizzes", "Exams", "Assignments", "Projects"],
       default: "Quizzes"},
     shuffleAnswers: {type: Boolean, default: true},
-    timeLimit: {type: Number, default: 20},
+    timeLimit: {
+      time: {type: Number, default: 20},
+      bool: {type: Boolean, default: true},
+    },
     multipleAttempts: {type: Boolean, default: false},
     showCorrectAnswers: Boolean,
     accessCode: String,

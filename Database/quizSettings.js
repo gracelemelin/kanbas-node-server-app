@@ -6,7 +6,10 @@ export default [
         "points": 12,
         "assignmentGroup": "Quizzes",
         "shuffleAnswers": true,
-        "timeLimit": 20,
+        "timeLimit": {
+            "time": 20,
+            "boolean": true
+        },
         "multipleAttempts": false,
         "showCorrectAnswers": true,
         "accessCode": "1234",
@@ -24,7 +27,10 @@ export default [
         "points": 50,
         "assignmentGroup": "Exams",
         "shuffleAnswers": false,
-        "timeLimit": 60,
+        "timeLimit": {
+            "time": 20,
+            "boolean": true
+        },
         "multipleAttempts": true,
         "showCorrectAnswers": false,
         "accessCode": "",
