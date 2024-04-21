@@ -24,7 +24,7 @@ export default [
         "id": "Q102",
         "description": "New Quiz",
         "quizType": "Practice Quiz",
-        "points": 50,
+        "points": 0,
         "assignmentGroup": "Exams",
         "shuffleAnswers": false,
         "timeLimit": {

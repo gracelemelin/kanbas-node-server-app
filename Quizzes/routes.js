@@ -58,7 +58,10 @@ function QuizzesRoutes(app) {
       points: 0,
       assignmentGroup: "Quizzes",
       shuffleAnswers: true,
-      timeLimit: 20,
+      timeLimit: {
+        time: 20,
+        exists: true
+      },
       multipleAttempts: false,
       showCorrectAnswers: true,
       accessCode: "",
