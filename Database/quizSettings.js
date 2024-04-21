@@ -8,7 +8,7 @@ export default [
         "shuffleAnswers": true,
         "timeLimit": {
             "time": 20,
-            "boolean": true
+            "exists": true
         },
         "multipleAttempts": false,
         "showCorrectAnswers": true,
@@ -29,7 +29,7 @@ export default [
         "shuffleAnswers": false,
         "timeLimit": {
             "time": 20,
-            "boolean": true
+            "exists": true
         },
         "multipleAttempts": true,
         "showCorrectAnswers": false,
