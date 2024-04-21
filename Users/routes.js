@@ -1,11 +1,10 @@
 import * as dao from "./dao.js";
-const globalCurrentUser = null;
+let currentUser = null;
 
 export default function UserRoutes(app) {
 
   const createUser = async (req, res) => {
     const user = await dao.createUser(req.body);
-    globalCurrentUser = user;
     res.json(user);
   };
 
@@ -20,12 +19,11 @@ export default function UserRoutes(app) {
   };
 
   const profile = async (req, res) => {
-    const currentUser = req.session["currentUser"];
-    currentUser = globalCurrentUser;
-    if (!currentUser) {
-      res.sendStatus(401);
-      return;
-    }
+    // const currentUser = req.session["currentUser"];
+    // if (!currentUser) {
+    //   res.sendStatus(401);
+    //   return;
+    // }
     res.json(currentUser);
   };
 
@@ -49,28 +47,26 @@ export default function UserRoutes(app) {
       res.status(400).json(
         { message: "Username already taken" });
     } else {
-      const currentUser = await dao.createUser(req.body);
-      req.session["currentUser"] = currentUser;
-      globalCurrentUser = currentUser;
+      currentUser = await dao.createUser(req.body);
+      // req.session["currentUser"] = currentUser;
       res.json(currentUser);
     }
    };
 
   const signin = async (req, res) => {
     const { username, password } = req.body;
-    const currentUser = await dao.findUserByCredentials(username, password);
-    if (currentUser) {
-      req.session["currentUser"] = currentUser;
-      globalCurrentUser = currentUser;
-      res.setHeader("Access-Control-Allow-Origin", "https://a6--lustrous-platypus-b74747.netlify.app")
-      res.json(currentUser);
-    } else {
-      res.sendStatus(401);
-    }
+    currentUser = await dao.findUserByCredentials(username, password);
+    res.json(currentUser);
+    // if (currentUser) {
+    //   req.session["currentUser"] = currentUser;
+    //   res.json(currentUser);
+    // } else {
+    //   res.sendStatus(401);
+    // }
   };
 
   const signout = (req, res) => { 
-    req.session.destroy();
+    currentUser = null;
     res.sendStatus(200);
   };
 

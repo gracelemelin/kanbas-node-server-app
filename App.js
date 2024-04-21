@@ -5,14 +5,10 @@ import CourseRoutes from "./Courses/routes.js";
 import ModuleRoutes from "./Modules/routes.js";
 import mongoose from 'mongoose';
 import UserRoutes from './Users/routes.js';
+import QuizzesRoutes from './Quizzes/routes.js';
+import QuizQuestions from './QuizQuestions/routes.js';
 import cors from "cors";
-import session from "express-session";
-import "dotenv/config";
-
-const CONNECTIONSTRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/kanbas'
-
-mongoose.connect(CONNECTIONSTRING, {dbName: 'kanbas'});
-
+mongoose.connect("mongodb://localhost:27017/kanbas");
 const app = express()
 app.use(cors({
   credentials: true,
@@ -42,6 +38,8 @@ app.use(express.json());
 UserRoutes(app);
 ModuleRoutes(app);
 CourseRoutes(app);
+QuizzesRoutes(app);
+QuizQuestions(app);
 Lab5(app)
 Hello(app)
 app.listen(process.env.PORT || 4000)
